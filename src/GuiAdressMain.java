@@ -1,10 +1,7 @@
-import javafx.application.Application;
-
 import javax.imageio.ImageIO;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.image.BufferedImage;
-import java.io.File;
 import java.io.IOException;
 import java.net.URL;
 
@@ -37,7 +34,6 @@ public class GuiAdressMain extends JFrame {
         JPanel jPanel = new JPanel();
         jPanel.setLayout(new GridLayout());
 
-        jPanel.add(new JTextArea());
 
 
 
