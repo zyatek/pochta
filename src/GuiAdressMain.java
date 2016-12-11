@@ -50,7 +50,7 @@ public class GuiAdressMain extends JFrame {
         constraints.weightx = 0.0;
         constraints.weighty = 0.0;
 
-
+//
 
         //add components
         JButton button = new JButton("Hello");
