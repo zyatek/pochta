@@ -36,13 +36,15 @@ public class GuiAdressMain extends JFrame {
         jPanel.setLayout(gbLayout);
         GridBagConstraints constraints = new GridBagConstraints();
 
+        //https://www.youtube.com/watch?v=cGSwzF6vfSc&t=875s
+//http://www.frolov-lib.ru/programming/javasamples/vol5/vol5_5/
         constraints.anchor = GridBagConstraints.NORTH;
         constraints.fill   = GridBagConstraints.NONE;
-        constraints.gridheight = 1;
-        constraints.gridwidth  = GridBagConstraints.REMAINDER;
-        constraints.gridx = GridBagConstraints.RELATIVE;
-        constraints.gridy = GridBagConstraints.RELATIVE;
-        constraints.insets = new Insets(40, 0, 0, 0);
+        constraints.gridheight = GridBagConstraints.RELATIVE; // количество ячеек в высоту для компонента
+        constraints.gridwidth  = GridBagConstraints.RELATIVE;// количество ячеек в ширину для компонента
+        constraints.gridx = 0;//номер ячейки по оси х
+        constraints.gridy = 0;// номер ячейки по оси y
+        constraints.insets = new Insets(20, 0, 0, 0);
         constraints.ipadx = 0;
         constraints.ipady = 0;
         constraints.weightx = 0.0;
@@ -53,7 +55,11 @@ public class GuiAdressMain extends JFrame {
         //add components
         JButton button = new JButton("Hello");
         gbLayout.setConstraints(button, constraints);
+        JTextArea textArea = new JTextArea("good");
         jPanel.add(button);
+        jPanel.add(textArea);
+
+
 
 
 
