@@ -27,18 +27,39 @@ public class GuiAdressMain extends JFrame {
 
         //Content Pane
 //        Container contentPane = getContentPane();
-//        contentPane.setLayout(new GridLayout(2, 1));
+//        contentPane.setLayout(new GridLayout(4, 4));
 
 
         //create content
         JPanel jPanel = new JPanel();
-        jPanel.setLayout(new GridLayout());
+        GridBagLayout gbLayout = new GridBagLayout();
+        jPanel.setLayout(gbLayout);
+        GridBagConstraints constraints = new GridBagConstraints();
+
+        constraints.anchor = GridBagConstraints.NORTH;
+        constraints.fill   = GridBagConstraints.NONE;
+        constraints.gridheight = 1;
+        constraints.gridwidth  = GridBagConstraints.REMAINDER;
+        constraints.gridx = GridBagConstraints.RELATIVE;
+        constraints.gridy = GridBagConstraints.RELATIVE;
+        constraints.insets = new Insets(40, 0, 0, 0);
+        constraints.ipadx = 0;
+        constraints.ipady = 0;
+        constraints.weightx = 0.0;
+        constraints.weighty = 0.0;
+
+
+
+        //add components
+        JButton button = new JButton("Hello");
+        gbLayout.setConstraints(button, constraints);
+        jPanel.add(button);
 
 
 
 
         //start app
-
+        add(jPanel);
         setLocationRelativeTo(null);
         setVisible(true);
 
