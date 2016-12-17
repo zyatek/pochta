@@ -29,87 +29,65 @@ public class GuiAdressMain extends JFrame {
         JPanel jPanel = new JPanel();
         GridBagLayout gbLayout = new GridBagLayout();
         jPanel.setLayout(gbLayout);
-        jPanel.setBackground(Color.BLUE);
+//        jPanel.setBackground(Color.BLUE);
         add(jPanel);
 
 
         //create content
+        JTextArea textArea = new JTextArea(30, 30);
+        JScrollPane scrollPane = new JScrollPane(textArea);
 
-        JButton buttonPass = new JButton("Password");
-        JButton buttonLog = new JButton("Login");
-
-        JLabel labelPass = new JLabel("Password");
-        JLabel labelLog = new JLabel("Login");
-
-        JTextField textPass = new JTextField(20);
-        JTextField textLog = new JTextField(20);
-
-        JTextArea textArea = new JTextArea(3, 10);
+        JButton buttonNext = new JButton("Next");
+        JButton buttonClear = new JButton("Clear");
+        JButton buttonPreview = new JButton("Preview");
 
         GridBagConstraints constraints1 = new GridBagConstraints();
-        constraints1.weightx = 0.9;
+        constraints1.weightx = 0;
         constraints1.weighty = 0;
         constraints1.gridx = 0;
         constraints1.gridy = 0;
-        constraints1.gridheight = 3;
+        constraints1.gridheight = 1;
         constraints1.gridwidth = 3;
+        constraints1.anchor = GridBagConstraints.CENTER;
 
-        jPanel.add(textArea, constraints1);
-
+        jPanel.add(scrollPane, constraints1);
 
         GridBagConstraints constraints2 = new GridBagConstraints();
-        constraints2.weightx = 0.9;
-        constraints2.gridx = 3;
-        constraints2.gridy = 0;
-        constraints2.gridheight = 2;
+        constraints2.weightx = 0;
+        constraints2.weighty = 0;
+        constraints2.gridx = 2;
+        constraints2.gridy = 4;
+        constraints2.gridheight = 1;
         constraints2.gridwidth = 1;
-        constraints2.insets = new Insets(2, 20, 2, 2);
+        constraints1.anchor = GridBagConstraints.CENTER;
+//        constraints2.insets = new Insets(2, 20, 2, 2);
 
-        jPanel.add(buttonLog, constraints2);
+        jPanel.add(buttonNext, constraints2);
 
+        GridBagConstraints constraints3 = new GridBagConstraints();
+        constraints3.weightx = 0;
+        constraints3.weighty = 0;
+        constraints3.gridx = 0;
+        constraints3.gridy = 4;
+        constraints3.gridheight = 1;
+        constraints3.gridwidth = 1;
+        constraints1.anchor = GridBagConstraints.CENTER;
+//        constraints3.insets = new Insets(2, 20, 2, 2);
 
-//        constraints.gridx = 0;
-//        constraints.gridy = 0;
-//        constraints.gridheight = 1;
-//        constraints.gridwidth = 1;
-//        constraints.anchor = GridBagConstraints.WEST;
-//        constraints.fill = GridBagConstraints.BOTH;
-//        constraints.insets = new Insets(1, 3, 2, 4);
-//
-//        jPanel.add(buttonPass, constraints);
-
-
-
-        //https://www.youtube.com/watch?v=cGSwzF6vfSc&t=875s
-//http://www.frolov-lib.ru/programming/javasamples/vol5/vol5_5/
-//
-////        constraints.anchor = GridBagConstraints.NORTH;
-////        constraints.fill   = GridBagConstraints.NONE;
-////        constraints.gridheight = GridBagConstraints.RELATIVE; // количество ячеек в высоту для компонента
-////        constraints.gridwidth  = GridBagConstraints.RELATIVE;// количество ячеек в ширину для компонента
-////        constraints.gridx = 0;//номер ячейки по оси х
-////        constraints.gridy = 0;// номер ячейки по оси y
-////        constraints.insets = new Insets(20, 0, 0, 0);
-////        constraints.ipadx = 0;
-////        constraints.ipady = 0;
-////        constraints.weightx = 0.0;
-////        constraints.weighty = 0.0;
-//
-////
-//
-//        //add components
-//        JButton button = new JButton("Hello");
-//        gbLayout.setConstraints(button, constraints);
-//        JTextArea textArea = new JTextArea("good");
-//        jPanel.add(button);
-//        jPanel.add(textArea);
+        jPanel.add(buttonPreview, constraints3);
 
 
+        GridBagConstraints constraints4 = new GridBagConstraints();
+        constraints4.weightx = 0;
+        constraints4.weighty = 0;
+        constraints4.gridx = 1;
+        constraints4.gridy = 4;
+        constraints4.gridheight = 1;
+        constraints4.gridwidth = 1;
+        constraints1.anchor = GridBagConstraints.CENTER;
+//        constraints3.insets = new Insets(2, 20, 2, 2);
 
-
-
-
-        //start app
+        jPanel.add(buttonClear, constraints4);
 
         add(jPanel);
 
