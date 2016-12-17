@@ -3,7 +3,7 @@ public class NumberGui extends MainGui {
     public NumberGui(MainGui preview) {
         previewJFrame = preview;
 
-        labelTitle.setText("Укажите название и номер иска/заявления");
+        labelTitle.setText("Укажите НАЗВАНИЕ и НОМЕР иска/заявления");
 
         buttonNext.setText("Finish");
 
