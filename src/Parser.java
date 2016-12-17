@@ -1,10 +1,10 @@
 public class Parser {
 
-    public void parseAdress(String adress) {
+    public static void parseAdress(String adress) {
 
     }
 
-    public void parseAdditions(String additions) {
+    public static void parseAdditions(String additions) {
 
     }
 

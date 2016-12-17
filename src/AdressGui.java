@@ -4,16 +4,17 @@ import java.awt.event.ActionListener;
 
 public class AdressGui extends MainGui {
 
-    AdressGui thisObject = this;
+
 
     public AdressGui() {
+        thisObject = this;
 
 
             buttonNext.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
                 String adress = textArea.getText();
-                parser.parseAdress(adress);
+                Parser.parseAdress(adress);
 
                 if (nextJFrame == null) {
                     nextJFrame = new AdditionGui(thisObject);

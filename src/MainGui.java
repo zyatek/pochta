@@ -11,8 +11,9 @@ public class MainGui extends JFrame {
 
     MainGui previewJFrame = null;
     MainGui nextJFrame = null;
+    MainGui thisObject = null;
 
-    Parser parser = new Parser();
+//    Parser parser = new Parser();
     public String textFromArea = "";
 
     JPanel jPanel = new JPanel();
@@ -50,6 +51,16 @@ public class MainGui extends JFrame {
 
         labelTitle.setFont(new Font("Arial", Font.PLAIN, 14));
         labelTitle.setHorizontalAlignment(JLabel.CENTER);
+
+        buttonPreview.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                previewJFrame.setVisible(true);
+                setVisible(false);
+
+            }
+        });
+
 
         buttonClear.addActionListener(new ActionListener() {
             @Override
