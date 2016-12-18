@@ -6,10 +6,12 @@ import java.awt.event.ActionListener;
 public class NumberGui extends MainGui {
 
     JLabel nameLabel = new JLabel("Введите название документа");
+    JLabel requisitesLabel = new JLabel("Введите определение");
     JLabel numberLabel = new JLabel("Введите номер документа");
     JLabel dataLabel = new JLabel("Введите дату документа");
 
     JTextField nameField = new JTextField();
+    JTextField requisitesField = new JTextField();
     JTextField numberField = new JTextField("№140/8/",5);
     JTextField dataField = new JTextField(10);
 
@@ -20,11 +22,13 @@ public class NumberGui extends MainGui {
 
         labelTitle.setText("Внесите реквизиты документа");
 
-        JPanel centerJPanel = new JPanel(new GridLayout(3,1));
-        JPanel westJPanel = new JPanel(new GridLayout(3,1));
+        JPanel centerJPanel = new JPanel(new GridLayout(4,1));
+        JPanel westJPanel = new JPanel(new GridLayout(4,1));
 
         westJPanel.add(nameLabel);
         centerJPanel.add(nameField);
+        westJPanel.add(requisitesLabel);
+        centerJPanel.add(requisitesField);
         westJPanel.add(numberLabel);
         centerJPanel.add(numberField);
         westJPanel.add(dataLabel);
@@ -36,10 +40,11 @@ public class NumberGui extends MainGui {
         buttonNext.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                String[] detailsDoc = new String[3];
+                String[] detailsDoc = new String[4];
                 detailsDoc[0] = nameField.getText();
-                detailsDoc[1] = numberField.getText();
-                detailsDoc[2] = dataField.getText();
+                detailsDoc[1] = requisitesField.getText();
+                detailsDoc[2] = numberField.getText();
+                detailsDoc[3] = dataField.getText();
 
                 Parser.parseDetailsDoc(detailsDoc);
 
