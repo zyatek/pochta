@@ -57,6 +57,7 @@ public class NumberGui extends MainGui {
             @Override
             public void actionPerformed(ActionEvent e) {
                 nameField.setText("");
+                requisitesField.setText("");
                 numberField.setText("№140/8/");
                 dataField.setText("");
             }
