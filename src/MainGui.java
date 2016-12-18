@@ -1,22 +1,17 @@
-import javax.imageio.ImageIO;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.awt.image.BufferedImage;
-import java.io.IOException;
-import java.net.URL;
 
-public class MainGui extends JFrame {
+public class MainGui extends JPanel {
 
-    MainGui previewJFrame = null;
-    MainGui nextJFrame = null;
-    MainGui thisObject = null;
+    MainGui previewJPanel = null;
+    MainGui nextJPanel = null;
 
-//    Parser parser = new Parser();
+    GuiJFrame jFrame = null;
+
     public String textFromArea = "";
 
-    JPanel jPanel = new JPanel();
     JPanel buttonPanel = new JPanel(new GridLayout(1, 3));
 
     JLabel labelTitle = new JLabel();
@@ -26,28 +21,9 @@ public class MainGui extends JFrame {
     JButton buttonNext = new JButton("Next");
     JButton buttonClear = new JButton("Clear");
 
-    AdressGui adressGui;
-    AdditionGui additionGui;
-
     public MainGui() {
-        super("Pochta");
 
-        //set setting JFrame
-        setSize(700, 600);
-        setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
-//        setLocationRelativeTo(null);
-
-        //icon
-        URL imagePath = getClass().getResource("/img/Pochta256.jpg");
-        BufferedImage image = null;
-        try {
-            image = ImageIO.read(imagePath);
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-        setIconImage(image);
-
-        jPanel.setLayout(new BorderLayout());
+        setLayout(new BorderLayout());
 
         labelTitle.setFont(new Font("Arial", Font.PLAIN, 14));
         labelTitle.setHorizontalAlignment(JLabel.CENTER);
@@ -55,11 +31,10 @@ public class MainGui extends JFrame {
         buttonPreview.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                previewJFrame.setVisible(true);
-                setVisible(false);
-
+                jFrame.setjPanel(MainGui.this.previewJPanel);
             }
         });
+
 
 
         buttonClear.addActionListener(new ActionListener() {
@@ -73,14 +48,10 @@ public class MainGui extends JFrame {
         buttonPanel.add(buttonClear);
         buttonPanel.add(buttonNext);
 
-        jPanel.add(scrollPane, BorderLayout.CENTER);
-        jPanel.add(buttonPanel, BorderLayout.PAGE_END);
-        jPanel.add(labelTitle, BorderLayout.PAGE_START);
+        add(scrollPane, BorderLayout.CENTER);
+        add(buttonPanel, BorderLayout.PAGE_END);
+        add(labelTitle, BorderLayout.PAGE_START);
 
-        add(jPanel);
-
-        setLocationRelativeTo(null);
-
-        setVisible(true);
     }
+
 }

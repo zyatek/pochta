@@ -7,7 +7,7 @@ public class Pochta {
         SwingUtilities.invokeLater(new Runnable() {
             @Override
             public void run() {
-                new AdressGui();
+                new GuiJFrame();
             }
         });
     }
